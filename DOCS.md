@@ -10,7 +10,7 @@
   + [Updating](#updating)
   + [Edit-in-place](#edit-in-place)
   + [Using packages](#using-packages)
-* [Using .fxrc](#using-fxrc)
+* [Using fxrc](#using-fxrc)
   + [Query language](#query-language)
 * [Formatting](#formatting)
 * [Other examples](#other-examples)
@@ -154,11 +154,11 @@ $ npm install -g lodash
 $ cat package.json | fx 'require("lodash").keys(this.dependencies)'
 ```
 
-## Using .fxrc
+## Using fxrc
 
-Create _.fxrc_ file in `$HOME` directory, and require any packages or define global functions.
+Create _fxrc_ file in user configuration directory (usually `~/.config/fx/`), and require any packages or define global functions.
 
-For example, access all lodash methods without `_` prefix. Put in your `.fxrc` file:
+For example, access all lodash methods without `_` prefix. Put in your `fxrc` file:
 
 ```js
 Object.assign(global, require('lodash/fp'))
@@ -259,7 +259,7 @@ $ kubectl logs ... | fx 'select(x => x.status == 500)' .message
 $ kubectl logs ... | fx 'filter(x => x.status < 499)' .message
 ```
 
-> Note, what if use override `filter`/`select` in _.fxrc_ you still able to access them with prefix:
+> Note, what if use override `filter`/`select` in _fxrc_ you still able to access them with prefix:
 > `std.select(cb)` or `std.filter(cd)`
 
 ## Interactive mode

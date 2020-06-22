@@ -52,7 +52,7 @@ Use full power of JavaScript.
 $ curl ... | fx '.filter(x => x.startsWith("a"))'
 ```
 
-Access all lodash (or ramda, etc) methods by using [.fxrc](https://github.com/antonmedv/fx/blob/master/DOCS.md#using-fxrc) file.
+Access all lodash (or ramda, etc) methods by using [fxrc](https://github.com/antonmedv/fx/blob/master/DOCS.md#using-fxrc) file.
 ```bash
 $ curl ... | fx '_.groupBy("commit.committer.name")' '_.mapValues(_.size)'
 ```

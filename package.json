@@ -43,7 +43,9 @@
     "chalk": "^4.1.0",
     "indent-string": "^4.0.0",
     "lossless-json": "^1.0.4",
-    "string-width": "^4.2.0"
+    "string-width": "^4.2.0",
+    "env-paths": "^2.2.0",
+    "make-dir": "^3.1.0"
   },
   "devDependencies": {
     "ava": "^3.9.0",

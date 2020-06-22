@@ -5,9 +5,15 @@ const fs = require('fs')
 const path = require('path')
 const JSON = require('./json')
 const std = require('./std')
+const md = require('make-dir')
+const envpath = require('env-paths')
+
+const paths = envpath('fx')
+const rcdir = paths.config
 
 try {
-  require(path.join(os.homedir(), '.fxrc')) // Should be required before config.js usage.
+  md.sync(rcdir)
+  require(path.join(rcdir, 'fxrc')) // Should be required before config.js usage.
 } catch (err) {
   if (err.code !== 'MODULE_NOT_FOUND') {
     throw err
